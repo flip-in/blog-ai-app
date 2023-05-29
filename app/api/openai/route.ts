@@ -17,12 +17,12 @@ export async function POST(request: Request, response: any) {
         model: "gpt-3.5-turbo",
         messages: [
           {
-            role: "user",
-            content: `Create a 3 line blog post with HTML tags based on this title: ${title}. Only provide the body of the article. Do not start with an H1 tag, and do not say "Sure thing"`,
-          },
-          {
             role: "system",
             content: `Your tone is :${role || "You are a helpful assistant"}. Write with HTML tags.`,
+          },
+          {
+            role: "user",
+            content: `Create a 3 line blog post with HTML tags based on this title: ${title}. Only provide the body of the article. Do not start with an H1 tag, and do not say "Sure thing"`,
           },
         ],
       });
